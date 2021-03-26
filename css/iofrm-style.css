@@ -77,7 +77,7 @@ html, body {
 }
 
 .website-logo-inside {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .website-logo-inside img {
@@ -1393,7 +1393,7 @@ input.sm-content {
 }
 
 .form-body.without-side .website-logo-inside .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/Final.svg");
 }
 
 .form-body.without-side .form-holder .form-content ::-webkit-input-placeholder {

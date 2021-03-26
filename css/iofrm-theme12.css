@@ -31,7 +31,7 @@
 }
 
 .website-logo .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/Final.svg");
 }
 
 .website-logo .logo img {
@@ -43,12 +43,11 @@
 }
 
 .website-logo-inside .logo {
-    background-image: url("../images/logo-dark.svg");
-    margin-left: 10%;
+    background-image: url("../images/Final.svg");
 }
 
 .website-logo-inside .logo img {
-    width: 200px;
+    width: 150px;
 }
 
 .img-holder {
@@ -474,10 +473,10 @@
     }
 
     .website-logo .logo {
-        background-image: url("../images/logo-dark.svg");
+        background-image: url("../images/Final.svg");
     }
 
     .form-body.without-side .website-logo .logo {
-        background-image: url("../images/logo-dark.svg");
+        background-image: url("../images/Final.svg");
     }
 }
