@@ -1,43 +1,51 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="socket.io/socket.io.js"></script>
-        <link rel="stylesheet" type="text/css" href="styles/index.css">
-        <title>J.Chat</title>
-    </head>
-
-    <body>
-        <div id="login-area">
-            <div id="login-text">
-                <h1>Login Page</h1>
-            </div>
-            <div id="Login-form-area">
-                <form action="" id="login-form">
-                    <input id="username" type="text" placeholder="Username" autocomplete="off">
-                    <input id="login-submit" type="submit" value="Login">
-                </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iofrm</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-theme12.css">
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="website-logo-inside">
+                            <a href="index.html">
+                                <div class="logo">
+                                    <img class="logo-size" src="images/logo-light.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <h3>Chat with other people via JChat.</h3>
+                        <p>Access to our public chatting room.</p>
+                        <!-- <div class="page-links">
+                            <a href="login12.html" class="active">Login</a><a href="register12.html">Register</a>
+                        </div> -->
+                        <form>
+                            <input class="form-control" type="text" name="username" placeholder="User Name" required>
+                            <!-- <input class="form-control" type="password" name="password" placeholder="Password" required> -->
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Login</button> 
+                                <!-- <a href="forget12.html">Forget password?</a> -->
+                            </div>
+                        </form>
+                        <!-- <div class="other-links">
+                            <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </div>
-        
-
-        <div id="test">
-
-        </div>
-
-    </body>
-
-    <script type="text/javascript">
-        var socket = io()
-
-        $("#login-form").submit(function(event){
-            event.preventDefault();
-            if($("#username").val() == "" || $("#username").val() == "") {
-                alert("invalid username!");
-            } else {
-                $("#login-area").hide();
-                $("#test").show();
-            }
-        });
-    </script>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>
