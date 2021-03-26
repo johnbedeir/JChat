@@ -1,0 +1,23 @@
+{
+  "name": "j.chat",
+  "version": "1.0.0",
+  "description": "J.Chat is a chatting room created by johnydev.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triplea-git/JChat.git"
+  },
+  "author": "John Bedeir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/triplea-git/JChat/issues"
+  },
+  "homepage": "https://github.com/triplea-git/JChat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.0"
+  }
+}
