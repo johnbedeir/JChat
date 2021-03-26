@@ -13,8 +13,24 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/styles/index.css", function(req, res){
-    res.sendFile(__dirname + "/styles/index.css");
+app.get("/css/iofrm-theme12.css", function(req, res){
+    res.sendFile(__dirname + "/css/iofrm-theme12.css");
+});
+
+app.get("/css/iofrm-style.css", function(req, res){
+    res.sendFile(__dirname + "/css/iofrm-style.css");
+});
+
+app.get("/css/fontawesome-all.min.css", function(req, res){
+    res.sendFile(__dirname + "/css/fontawesome-all.min.css");
+});
+
+app.get("/css/bootstrap.min.css", function(req, res){
+    res.sendFile(__dirname + "/css/bootstrap.min.css");
+});
+
+app.get("/images/Final.svg", function(req, res){
+    res.sendFile(__dirname + "/images/Final.svg");
 });
 
 io.on("connection", function(socket){
