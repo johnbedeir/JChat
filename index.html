@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>jChat</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
@@ -12,11 +13,11 @@
 </head>
 <body>
     <div class="form-body">
-        <div class="row">
+        <div class="row" >
             <div class="form-holder">
                 <div class="form-content">
-                    <div class="form-items">
-                        <div class="website-logo-inside">
+                    <div class="form-items" id="login-area">
+                        <div class="website-logo-inside" id="login-text">
                             <a href="index.html">
                                 <div class="logo">
                                     <img class="logo-size" src="images/Final.svg" alt="">
@@ -26,6 +27,12 @@
                         <h3>Chat anonymously with others via JChat.</h3>
                         <!-- <p>Access to our public chatting room.</p> -->
                         <p>Coming Soon ...</p>
+                        <div id="login-form-area">
+                            <form action="/chat" method="POST" id="login-form" class="form-button">
+                                <input id="username" class="form-control" type="text" name="username" placeholder="User Name" required autocomplete="off">
+                                <button onclick="login()" id="login-submit" type="submit" class="ibtn">Login</button> 
+                            </form>
+                        </div>
                         <div class="social">
                             <a href="https://www.linkedin.com/in/johnbedeir/" target="blank" ><i class="fab fa-linkedin"></i></a>
                             <a href="https://www.instagram.com/johnbedeir/" target="blank"><i class="fab fa-instagram"></i></a>
@@ -33,26 +40,13 @@
                             <a href="https://hub.docker.com/u/triple3a" target="blank"><i class="fab fa-docker"></i></a>
                             <a href="https://github.com/triplea-git" target="blank"><i class="fab fa-github"></i></a>
                             <a href="mailto:info@johnydev.com" target="blank"><i class="fab fa-telegram-plane"></i></a>
-                        </div>
-                        <!-- <div class="page-links">
-                            <a href="login12.html" class="active">Login</a><a href="register12.html">Register</a>
-                        </div> -->
-                        <!-- <form>
-                            <input class="form-control" type="text" name="username" placeholder="User Name" required>
-                            <input class="form-control" type="password" name="password" placeholder="Password" required>
-                            <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Login</button> 
-                                <a href="forget12.html">Forget password?</a>
-                            </div>
-                        </form> -->
-                        <!-- <div class="other-links">
-                            <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
-                        </div> -->
+                        </div> 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
