@@ -24,13 +24,13 @@
                                 </div>
                             </a>
                         </div>
-                        <h3>Chat anonymously with others via JChat.</h3>
+                        <h3 style="color: black;">Chat anonymously with others via JChat.</h3>
                         <!-- <p>Access to our public chatting room.</p> -->
-                        <p>Coming Soon ...</p>
+                        <p style="color: black;">Coming Soon ...</p>
                         <div id="login-form-area">
                             <form id="login-form" class="form-button">
                                 <input id="username" class="form-control" type="text" name="username" placeholder="User Name" autocomplete="off">
-                                <button onclick="login()" id="login-submit" type="submit" class="ibtn">Login</button> 
+                                <button onclick="login(event)" id="login-submit" type="submit" class="ibtn">Login</button> 
                             </form>
                         </div>
                         <div class="social">
@@ -84,18 +84,18 @@
             }
         }
 
-        function login(){
+        function login(event){
           var loginArea = document.getElementById("login-area");
           var chatArea = document.getElementById("chat-area");
-          var Text = document.getElementById("username");
+          //var formBody =  document.getElementsByClassName("form-body")
+          //var $username = document.getElementById("username");
             
 
-          if(Text.value) {
+          if($("#username").val()) {  
             event.preventDefault();  
             $username = $("#username").val();
             loginArea.style.display="none";
             chatArea.style.display="block";
-
             $("#messages").html("");
 
             socket.emit("has connected", $username);
@@ -105,14 +105,7 @@
 
 
         }
-        //$("#login-form").submit(function(event){
-            //event.preventDefault();
-            
-            //$("#login-area").hide();
-          //  $("#chat-area").show();
 
-            
-        //});
 
         $("#message-form").submit(function(event){
             event.preventDefault();
