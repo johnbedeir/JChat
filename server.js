@@ -34,64 +34,30 @@ app.get("/images/Final.svg", function(req, res){
     res.sendFile(__dirname + "/images/Final.svg");
 });
 
-app.post("/chat", (req, res) => {
-    res.sendFile(__dirname + "/chat.html");
+// Javascript
+
+app.get("/js/bootstrap.min.js", function(req, res){
+    res.sendFile(__dirname + "/js/bootstrap.min.js");
+});
+
+app.get("/js/cleave.min.js", function(req, res){
+    res.sendFile(__dirname + "/js/cleave.min.js");
+});
+
+app.get("/js/jquery.min.css", function(req, res){
+    res.sendFile(__dirname + "/js/jquery.min.css");
+});
+
+app.get("/js/main.js", function(req, res){
+    res.sendFile(__dirname + "/js/main.js");
+});
+
+app.get("/js/popper.min.js", function(req, res){
+    res.sendFile(__dirname + "/js/popper.min.js");
 });
 
 
-// CHAT PAGE STYLE
 
-app.get("/styles/bootstrap4-alpha3.min.css", function(req, res){
-    res.sendFile(__dirname + "/styles/bootstrap4-alpha3.min.css");
-});
-
-app.get("/styles/responsive.css", function(req, res){
-    res.sendFile(__dirname + "/styles/responsive.css");
-});
-
-app.get("/styles/style.css", function(req, res){
-    res.sendFile(__dirname + "/styles/style.css");
-});
-
-app.get("/javascript/bootstrap4-alpha3.min.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/bootstrap4-alpha3.min.js");
-});
-
-app.get("/javascript/jquery.min.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/jquery.min.js");
-});
-
-app.get("/javascript/jquery.min.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/jquery.min.js");
-});
-
-app.get("/javascript/jquery.mCustomScrollbar.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/jquery.mCustomScrollbar.js");
-});
-
-app.get("/javascript/smoothscroll.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/smoothscroll.js");
-});
-
-app.get("/javascript/waypoints.min.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/waypoints.min.js");
-});
-
-app.get("/javascript/jquery-countTo.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/jquery-countTo.js");
-});
-
-app.get("/javascript/waves.min.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/waves.min.js");
-});
-
-app.get("/javascript/canvasjs.min.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/canvasjs.min.js");
-});
-
-app.get("/javascript/main.js", function(req, res){
-    res.sendFile(__dirname + "/javascript/main.js");
-});
 
 
 

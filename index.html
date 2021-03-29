@@ -28,8 +28,8 @@
                         <!-- <p>Access to our public chatting room.</p> -->
                         <p>Coming Soon ...</p>
                         <div id="login-form-area">
-                            <form action="/chat" method="POST" id="login-form" class="form-button">
-                                <input id="username" class="form-control" type="text" name="username" placeholder="User Name" required autocomplete="off">
+                            <form id="login-form" class="form-button">
+                                <input id="username" class="form-control" type="text" name="username" placeholder="User Name" autocomplete="off">
                                 <button onclick="login()" id="login-submit" type="submit" class="ibtn">Login</button> 
                             </form>
                         </div>
@@ -44,8 +44,104 @@
                     </div>
                 </div>
             </div>
+
+        <div id="chat-area">
+            <div id="users-area">
+                <div id="online-users-text">
+                    <h1>Online users:</h1> 
+                </div>
+                <div id="online-users">
+                    <ul id="users">   </ul>
+                </div>
+            </div>
+
+            <div id="message-area">
+                <div id="display-message-area">
+                    <ul id="messages">
+                        
+                    </ul>
+                </div>
+
+                <div id="message-form-area">
+                    <form id="message-form">
+                        <input id="message" type="text" placeholder="Type your message..." autocomplete="off">
+                        <input id="message-submit" type="submit" value="SEND">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
         </div>
     </div>
+<script type="text/javascript">
+        var socket = io()
+
+        function updateUsers(list) {
+            for(var i = 0; i < list.length; i++) {
+                $("#users").append("<li><b>" + list[i] + "</b></li>");
+            }
+        }
+
+        function login(){
+          var loginArea = document.getElementById("login-area");
+          var chatArea = document.getElementById("chat-area");
+          var Text = document.getElementById("username");
+            
+
+          if(Text.value) {
+            event.preventDefault();  
+            $username = $("#username").val();
+            loginArea.style.display="none";
+            chatArea.style.display="block";
+
+            $("#messages").html("");
+
+            socket.emit("has connected", $username);
+          } else {
+            alert("Type a username!");
+          }
+
+
+        }
+        //$("#login-form").submit(function(event){
+            //event.preventDefault();
+            
+            //$("#login-area").hide();
+          //  $("#chat-area").show();
+
+            
+        //});
+
+        $("#message-form").submit(function(event){
+            event.preventDefault();
+
+            if($("#message").val() == "" || $("#message").val() == " ") {
+                alert("You can't send empty messages!");
+            } else {
+                socket.emit("new message", {username: $username, message: $("#message").val()});
+                $("#message").val("");
+            }
+        });
+
+        socket.on("has connected", function(data) {
+            $("#users").html("");
+            updateUsers(data.usersList);
+            $("#messages").append("<li><i><b>" + data.username + "</b> has connected</i></li>")
+        });
+
+        socket.on("has disconnected", function(data) {
+            $("#users").html("");
+            updateUsers(data.usersList);
+            $("#messages").append("<li><i><b>" + data.username + "</b> has disconnected</i></li>")
+        });
+
+        socket.on("new message", function(data) {
+            $("#messages").append("<li><b>" + data.username + "</b>:" + data.message + "</li>");
+        });
+</script>
+
 
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
